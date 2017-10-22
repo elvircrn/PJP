@@ -1,0 +1,19 @@
+ class Osoba
+  attr_reader :ime, :starost, :spol
+  def initialize(ime, starost,spol)
+    @ime, @starost, @spol = ime, starost, spol
+  end
+  def <=>(osoba)
+    @starost <=> osoba.starost
+  end
+  def to_s
+    "#@ime (#@starost)"
+  end
+end
+grupa = [
+  Osoba.new("Pero", 33,"M"),
+  Osoba.new("Ana", 16,"Z"),
+  Osoba.new("Mujo", 23,"M"),
+  Osoba.new("Esma", 23,"Z")
+]
+puts grupa.sort.reverse
